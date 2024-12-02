@@ -4,7 +4,7 @@ from utils import read_lines
 def part_one():
     left, right = [], []
 
-    lines = read_lines("input.txt")
+    lines = read_lines("day_1/input.txt")
     for line in lines:
         [a, b] = line.split()
         left.append(int(a))
@@ -24,7 +24,7 @@ def part_one():
 def part_two():
     left, right = [], {}
 
-    lines = read_lines("input.txt")
+    lines = read_lines("day_1/input.txt")
     for line in lines:
         [a, b] = line.split()
         left.append(int(a))
