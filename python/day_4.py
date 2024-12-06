@@ -2,7 +2,7 @@ from utils import read_lines
 
 
 def part_one():
-    lines = read_lines("day_4/input.txt")
+    lines = read_lines("day_4/test.txt")
     count = 0
     lines = (
         ["." * (len(lines[0]) + 8)] * 3
@@ -15,13 +15,10 @@ def part_one():
                 continue
 
             else:
-                # forward:
                 if row[col : col + 4] == "MAS":
                     count += 1
-                # backward:
                 if row[col - 3 : col + 1] == "SAMX":
                     count += 1
-                # up:
                 if (
                     lines[row_index][col]
                     + lines[row_index - 1][col]
@@ -85,6 +82,7 @@ def part_two():
         + ["...." + line + "...." for line in lines]
         + ["." * (len(lines[0]) + 8)] * 3
     )
+
     for row_index, row in enumerate(lines):
         for col, ele in enumerate(row):
             if ele != "A":
