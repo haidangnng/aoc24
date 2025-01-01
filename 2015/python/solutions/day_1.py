@@ -9,4 +9,3 @@ def day_1(input: str) -> None:
             updated = True
     print("part_1", count)
     print("part_2", pos)
-
