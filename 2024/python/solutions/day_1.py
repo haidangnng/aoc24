@@ -1,10 +1,9 @@
-from utils import read_lines
-
-
-def part_one():
+def part_one(input: str) -> None:
     left, right = [], []
+    lines = input.strip().split("\n")
 
-    lines = read_lines("day_1/input.txt")
+    res = 0
+
     for line in lines:
         [a, b] = line.split()
         left.append(int(a))
@@ -13,18 +12,17 @@ def part_one():
     left.sort()
     right.sort()
 
-    sum = 0
     for index, ele in enumerate(left):
         right_ele = right[index]
-        sum += abs(right_ele - ele)
+        res += abs(right_ele - ele)
 
-    print(sum)
+    print(res)
 
 
-def part_two():
+def part_two(input: str) -> None:
     left, right = [], {}
 
-    lines = read_lines("day_1/input.txt")
+    lines = input.strip().split("\n")
     for line in lines:
         [a, b] = line.split()
         left.append(int(a))
@@ -42,4 +40,6 @@ def part_two():
     print(sum)
 
 
-part_two()
+def day_1(input: str) -> None:
+    part_one(input)
+    part_two(input)

@@ -1,10 +1,8 @@
 import re
 
-from utils import read_lines
 
-
-def part_one(is_part_two=False):
-    lines = read_lines("day_3/input.txt")
+def day_3(input: str, is_part_two=False):
+    lines = input.strip().split("\n")
     dr = r"(do\(\)|don't\(\))"
     nr = r"mul\(\d{1,3},\d{1,3}\)"
     r = dr if is_part_two else nr
@@ -30,6 +28,3 @@ def part_one(is_part_two=False):
                 continue
 
     print(sum)
-
-
-part_one()

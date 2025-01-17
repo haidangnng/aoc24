@@ -1,6 +1,3 @@
-from utils import read_lines
-
-
 def check(array, current, target, pTwo=False):
     count = 0
     if len(array) == 0 and current == target:
@@ -26,9 +23,7 @@ def check(array, current, target, pTwo=False):
     return count
 
 
-def main(ispt):
-    # lines = read_lines("day_7/test.txt")
-    lines = read_lines("day_7/input.txt")
+def main(lines, ispt):
     sum = 0
     for line in lines:
         [target, list] = line.split(": ")
@@ -40,5 +35,7 @@ def main(ispt):
     print(sum)
 
 
-main(False)
-main(True)
+def day_5(input):
+    lines = input.strip().split("\n")
+    main(lines, True)
+    main(lines, False)

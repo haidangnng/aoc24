@@ -1,8 +1,5 @@
-from utils import read_lines
-
-
-def part_one():
-    lines = read_lines("day_4/test.txt")
+def part_one(input: str):
+    lines = input.strip().split("\n")
     count = 0
     lines = (
         ["." * (len(lines[0]) + 8)] * 3
@@ -15,9 +12,9 @@ def part_one():
                 continue
 
             else:
-                if row[col : col + 4] == "MAS":
+                if row[col: col + 4] == "MAS":
                     count += 1
-                if row[col - 3 : col + 1] == "SAMX":
+                if row[col - 3: col + 1] == "SAMX":
                     count += 1
                 if (
                     lines[row_index][col]
@@ -74,8 +71,8 @@ def part_one():
     print(count)
 
 
-def part_two():
-    lines = read_lines("day_4/test.txt")
+def part_two(input):
+    lines = input.strip().split("\n")
     count = 0
     lines = (
         ["." * (len(lines[0]) + 8)] * 3
@@ -118,4 +115,6 @@ def part_two():
     print(count)
 
 
-part_two()
+def day_3(input: str):
+    part_one(input)
+    part_two(input)

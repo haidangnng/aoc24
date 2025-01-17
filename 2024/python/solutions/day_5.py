@@ -2,8 +2,6 @@ import math
 from collections import defaultdict
 from functools import reduce
 
-from utils import read_lines
-
 
 def update_rules(rules, a, b):
     if rules.get(a):
@@ -22,9 +20,7 @@ def get_middle(arr):
     return arr[mid]
 
 
-def part_one():
-    lines = read_lines("day_5/input.txt")
-
+def part_one(lines):
     is_query = False
     bf_rules = defaultdict(list)
     af_rules = defaultdict(list)
@@ -63,16 +59,15 @@ def part_one():
 
     sum = reduce(
         lambda a, b: (
-            get_middle(a) + get_middle(b) if isinstance(a, list) else a + get_middle(b)
+            get_middle(a) + get_middle(b) if isinstance(a,
+                                                        list) else a + get_middle(b)
         ),
         cr_list,
     )
     print(sum)
 
 
-def part_two():
-    lines = read_lines("day_5/input.txt")
-
+def part_two(lines):
     is_query = False
     bf_rules = defaultdict(list)
     af_rules = defaultdict(list)
@@ -126,4 +121,7 @@ def part_two():
     print(l)
 
 
-part_two()
+def day_5(input):
+    lines = input.strip().split("\n")
+    part_one(lines)
+    part_two(lines)

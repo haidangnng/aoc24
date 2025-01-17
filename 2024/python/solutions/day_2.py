@@ -1,9 +1,6 @@
-from utils import read_lines
-
-
 def is_safe_with_one_removal(report):
     for i in range(len(report)):
-        new_report = report[:i] + report[i + 1 :]
+        new_report = report[:i] + report[i + 1:]
         if is_safe_report(new_report):
             return True
     return False
@@ -21,8 +18,8 @@ def count_safe_reports(data, allow_remove=False):
     return safe_count
 
 
-def part_one():
-    lines = read_lines("day_2/test.txt")
+def part_one(input):
+    lines = input.strip().split("\n")
     data = []
     for line in lines:
         line = list(map(int, line.split()))
@@ -46,8 +43,8 @@ def is_safe_report(report):
     return increasing or decreasing
 
 
-def part_two():
-    lines = read_lines("day_2/input.txt")
+def part_two(input):
+    lines = input.strip().split("\n")
     data = []
     for line in lines:
         line = list(map(int, line.split()))
@@ -57,4 +54,6 @@ def part_two():
     print(count)
 
 
-part_two()
+def day_2(input: str) -> None:
+    part_one(input)
+    part_two(input)

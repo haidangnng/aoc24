@@ -1,5 +1,3 @@
-from utils import read_lines
-
 dir = {
     "<": [0, -1],
     ">": [0, 1],
@@ -10,8 +8,7 @@ dir = {
 opts = ["^", ">", "v", "<"]
 
 
-def part_one():
-    lines = read_lines("day_6/test.txt")
+def part_one(lines):
     cd = 0
     guard = []
     matrix = (
@@ -52,8 +49,7 @@ def part_one():
     print(count)
 
 
-def part_two():
-    lines = read_lines("day_6/test.txt")
+def part_two(lines):
     cd = 0
     guard = []
     matrix = (
@@ -75,7 +71,10 @@ def part_two():
     while run:
         step = dir[opts[cd]]
         temp = dir[opts[(cd + 1) % 4]]
-        print(f"cur_dir: {opts[cd]}, next_dir: {opts[(cd + 1) % 4]}, temp: {temp}")
+        print(
+            f"cur_dir: {opts[cd]}, next_dir: {
+                opts[(cd + 1) % 4]}, temp: {temp}"
+        )
         r, c = temp
         if r:
             con = [0, len(matrix)] if r > 0 else [len(matrix) - 1, 0]
@@ -114,4 +113,7 @@ def part_two():
     # print(count)
 
 
-part_two()
+def day_6(input):
+    lines = input.strip().split("\n")
+    part_one(lines)
+    part_two(lines)

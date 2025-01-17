@@ -4,11 +4,11 @@ from contextlib import contextmanager
 
 # from solutions.day_1 import day_1
 # from solutions.day_2 import day_2
-# from solutions.day_3 import day_3
+from solutions.day_3 import day_3
 # from solutions.day_4 import day_4
 # from solutions.day_5 import day_5
 # from solutions.day_6 import day_6
-from solutions.day_7 import day_7
+# from solutions.day_7 import day_7
 
 
 @contextmanager
@@ -20,10 +20,10 @@ def benchmark():
 
 
 with benchmark():
-    # day_1(get_input(2015, 1))
-    # day_2(get_input(2015, 2))
-    # day_3(get_input(2015, 3))
+    # day_1(get_input(2024, 1))
+    # day_2(get_input(2024, 2))
+    day_3(get_input(2024, 3), True)
     # day_4("iwrupvqb")
     # day_5(get_input(2015, 5))
     # day_6(get_input(2015, 6))
-    day_7(get_input(2015, 7))
+    # day_7(get_input(2015, 7))
